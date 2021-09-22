@@ -1,13 +1,13 @@
 cdef extern from "pysummation.h":
-    cdef struct geo:
-        float coordinates[2]
-        float weight
+    cdef  c_geo:
+        cdef float coordinates[2]
+        cdef float weight
 
-    void c_gfunc( struct geo *v1,  struct geo *v2,  struct geo *final_v)
+    cdef extern void c_gfunc( c_geo *v1,  c_geo *v2,  c_geo *final_v)
 
-def f(geo v1, geo v2): 
+def f(c_geo v1,c_geo v2): 
     cdef:
-        geo value 
+        c_geo value 
 
-    c_gfunc(<geo*>&v1, <geo*>&v2, <geo*>&value)
+    c_gfunc(c_geo *&v1, c_geo *&v2, c_geo *&value)
     return value 
