@@ -3,5 +3,5 @@ struct geo{
     float weight;
 };
 
-extern void c_gfunc(geo *v1, geo *v2, geo *final_v);
+extern void c_gfunc(struct geo *v1, struct geo *v2, struct geo *final_v);
 
