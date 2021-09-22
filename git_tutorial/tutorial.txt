@@ -1,0 +1,50 @@
+Setup your git credentials: 
+
+
+The first time you enter your username and password to clone a repo, it will be saved to the git-config file
+git config --global credential.helper store 
+
+------------------------------------------------------
+
+To clone a repository:
+
+1. Go to file folder where you want the repo to exist 
+2. git clone https://github.com/<your_username>/<your_repo> (remove <>, replace with your username and brackets)
+
+-------------------------------------------------------
+
+To make sure you don't need to always put in the repo_link when you want to pull: 
+
+git remote add variable_name https://<your_username>/<your_repo>
+
+After you add a remote, say you called it test, you can pull from git using the following: 
+
+git pull test <branch> 
+
+In the place of branch, you would just put the name of the branch you want. For example, say you want to pull everything in the repo: 
+
+git pull test main --> usually main will be the overarching name for the repo, but you can check by goint to the repo on github.com 
+
+------------------------------------------------------
+
+Pushing to git: 
+
+go to your local repository, then run the following lines in terminal:
+
+git add .
+
+git commit -m "your_comment_here"
+
+git push variable_name branch_name 
+
+When you try to push to git, it will ask for your username and password, you can type in your username, but your git password is no longer accepted as a method for command line pushing. You need to create a key:
+
+-----------------------------------------------------------
+
+Creating a key in git:
+
+1. go to github.com and login 
+2. go to settings --> developer options 
+3. personal access tokens 
+4. make one, and copy down the password it gives you. You will need it when typing in your password to push
+5. Remember! We added in a global identifier, so the password will be saved for use 
