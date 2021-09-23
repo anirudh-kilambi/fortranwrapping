@@ -1,15 +1,12 @@
 module interpolation_interface 
-use interpolation_module
-use iso_c_binding
+use interpolation_module ! call the original module 
+use iso_c_binding ! required for wrapping subroutines
 implicit none 
 
 
-! type, bind(c) :: geo
-!     real(c_float), dimension(1:2) :: coordinates 
-!     real(c_float) :: weight 
-! end type 
-
 contains 
+! The subroutine below will be essentially identical to the original module's subroutine with the inclusion of c types 
+! in parantheses (if needed). In this case, no C types are needed as we only use derived types.
 
     subroutine c_geo_manipulate(v1, v2, v3) bind(c)
         type(geo), intent(in) :: v1, v2
