@@ -23,7 +23,7 @@ git pull test <branch>
 
 In the place of branch, you would just put the name of the branch you want. For example, say you want to pull everything in the repo: 
 
-git pull test main --> usually main will be the overarching name for the repo, but you can check by goint to the repo on github.com 
+git pull test main --> usually main will be the overarching name for the repo, but you can check by going to the repo on github.com 
 
 ------------------------------------------------------
 
@@ -48,3 +48,51 @@ Creating a key in git:
 3. personal access tokens 
 4. make one, and copy down the password it gives you. You will need it when typing in your password to push
 5. Remember! We added in a global identifier, so the password will be saved for use 
+
+----------------------------------------------------------------------------
+
+Creating a new branch in git:
+There are 2 steps to creating a new branch from terminal: 
+
+1. Create a local branch 
+2. Push the branch to your repository 
+
+To create a local branch, there are two main options: 
+
+1. Create a brand new empty branch
+2. Create a brand new branch that is essentially, a copy of an existing one.
+
+Creating a new empty branch: 
+
+git checkout -b <new_branch_name> 
+
+i.e.: git checkout -b dev --> Creates a new branch "dev"
+
+Creating a new branch that is a copy of an existing one:
+
+git checkout -b <new_branch_name> <existing_branch_name>
+
+i.e.: git checkout -b dev main --> Creates a new branch "dev" that is a copy of the main branch 
+
+Push the branch to git:
+
+git push -u <remote_name> <branch_name>
+
+i.e.: git push -u test dev  --> This creates the dev branch on git 
+
+
+---------------------------------------------------------------------------------
+Checking and changing the branch you are in: 
+
+To check which branch you're in:
+
+git branch --show-current --> The spacing must be exactly the same with --show-current, can not have any extra whitespace between them. 
+
+To change which branch you're in: 
+
+git checkout <branch_name>
+
+i.e.: git checkout dev --> Will change you to the dev branch if you aren't already in it 
+
+
+
