@@ -9,5 +9,5 @@ class py_geo(object):
 # v2 = py_geo([1, 0], 2)
 v1 = {"coordinates": [0,1], "weight": 0.5}
 
-print f(v1, v1)
+print(f(v1, v1))
 
